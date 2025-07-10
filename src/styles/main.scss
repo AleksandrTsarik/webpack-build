@@ -1,0 +1,29 @@
+@use "./_variables.scss" as *;
+@use "./_settings.scss" as *;
+
+body {
+  font-family: $ff;
+}
+
+.header {
+  background: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer {
+  background: #222;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.example-component {
+  margin: 40px auto;
+  padding: 20px;
+  background: #e0e0e0;
+  width: 300px;
+  text-align: center;
+  border-radius: 8px;
+}
+
