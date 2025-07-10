@@ -41,14 +41,24 @@
 
 - `npm run start` — запуск dev-сервера
 - `npm run build` — production-сборка
+- `npm run fonts:convert` — Для ручного запуска конвертации шрифтов
+- `npm run images:convert` — Для ручного запуска конвертации картинок
 
 ## Конвертация шрифтов
 
 - Все шрифты `.ttf` и `.otf`, добавленные в `src/assets/fonts` (и любые подпапки), автоматически конвертируются в `.woff` и `.woff2` при запуске сборки (`npm run start` или `npm run build`).
 - Структура подпапок сохраняется.
 - Если файлы `.woff` или `.woff2` уже существуют, они не будут перезаписаны.
-- Для ручного запуска конвертации используйте:
-  ```bash
-  npm run fonts:convert
-  ```
 - Для корректной работы используйте только `.ttf` и `.otf` исходники. Конвертация происходит до сборки Webpack.
+
+## Конвертация картинок в webp
+
+- Все `.jpg`, `.jpeg`, `.png` из `src/assets/images` (и подпапок) автоматически конвертируются в `.webp` при запуске сборки (`npm run start` или `npm run build`).
+- Структура подпапок сохраняется, webp-файлы появляются рядом с исходниками.
+- В HTML используйте webp-версии через тег `<picture>`:
+  ```html
+  <picture>
+    <source srcset="images/your-image.webp" type="image/webp" />
+    <img src="images/your-image.jpg" alt="..." />
+  </picture>
+  ```
